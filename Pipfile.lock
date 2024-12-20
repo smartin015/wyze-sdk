@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9ef5814d402be7e16dd0c6150c6757611768ebab9c9f3cce0c7c683290edb06d"
+            "sha256": "2fc23d989852fb29bde73cc9598f132ff877509b6843b562d67c922a4b3eac66"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,14 +16,6 @@
         ]
     },
     "default": {
-        "blackboxprotobuf": {
-            "hashes": [
-                "sha256:233b714e6c24ce9d1c20b871462a220af9177e4fec01c1b797ac5ab86a1e1cea"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.6'",
-            "version": "==1.0.1"
-        },
         "certifi": {
             "hashes": [
                 "sha256:1275f7a45be9464efc1173084eaa30f866fe2e47d389406136d332ed4967ec56",

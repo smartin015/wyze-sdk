@@ -53,7 +53,7 @@ setup(
             "tests.*",
         ]
     ),
-    install_requires=["requests", "blackboxprotobuf", "mintotp", "pycryptodomex"],
+    install_requires=["requests", "mintotp", "pycryptodomex"],
     setup_requires=pytest_runner,
     test_suite="tests",
     tests_require=validate_dependencies,

@@ -711,39 +711,7 @@ class VacuumMap(JsonObject):
             return [VacuumMapNavigationPoint(**points) for points in map_data['6']['2']]
 
     def parse_blob(self, blob: str) -> dict:
-        if blob is None:
-            return {}
-
-        import base64
-        import binascii
-        import json
-        import zlib
-
-        import blackboxprotobuf
-
-        try:
-            compressed = base64.b64decode(blob)
-            if compressed is None:
-                raise WyzeObjectFormationError('could not decode map blob')
-
-            decompressed = zlib.decompress(compressed)
-
-            # add the protobuf definition to the known types
-            blackboxprotobuf.known_messages['robot_map'] = VacuumMap._robot_map_proto()
-
-            # for some reason we have to re-encode and then re-decode the bytes
-            map, typedef = blackboxprotobuf.protobuf_to_json(base64.b64decode(base64.b64encode(decompressed)), 'robot_map')
-
-            map = json.loads(map)
-            for key, value in map.items():
-                self._logger.info(f"key: {key}")
-                self._logger.info(f"  type: {value.__class__}")
-                if isinstance(value, (list, dict)):
-                    self._logger.info(f"  count: {len(value)}")
-
-            return map
-        except (binascii.Error, zlib.error) as e:
-            raise WyzeObjectFormationError(f"encountered an error parsing map blob {e}")
+        raise NotImplementedError("blackboxprotobuf removed due to version conflict")
 
 
 class VacuumMapSummary(JsonObject):

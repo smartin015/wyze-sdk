@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 wyze-sdk = {path = "."}
 requests = "*"
-blackboxprotobuf = "*"
 mintotp = "*"
 pycryptodomex = "*"
 
